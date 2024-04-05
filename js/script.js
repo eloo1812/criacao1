@@ -156,8 +156,8 @@ const showNote = (item) => {
     linkEdit = document.createElement('a');
     linkEdit.setAttribute("id", item.id);
     iconEdit = document.createElement('i');
-    iconEdit.className = "bi bi-pen";
-    iconEdit.style.color = "blue";
+    iconEdit.className = "bi bi-pencil-square";
+    iconEdit.style.color = "green";
     linkEdit.appendChild(iconEdit);
     divEdit.appendChild(linkEdit);
     divControls.appendChild(divEdit);
@@ -167,7 +167,7 @@ const showNote = (item) => {
     linkDel.setAttribute("id", item.id);
     iconDel = document.createElement('i');
     iconDel.className = "bi bi-trash";
-    iconDel.style.color = "red";
+    iconDel.style.color = "purple";
     linkDel.appendChild(iconDel);
     divDel.appendChild(linkDel);
     divControls.appendChild(divDel);
