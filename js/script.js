@@ -145,8 +145,8 @@ const showNote = (item) => {
     linkEdit = document.createElement('a');
     linkEdit.setAttribute("id", item.id);
     iconEdit = document.createElement('i');
-    iconEdit.className = "bi bi-pen";
-    iconEdit.style.color = "blue";
+    iconEdit.className = "bi bi-pencil-square";
+    iconEdit.style.color = "green";
     linkEdit.appendChild(iconEdit);
     divEdit.appendChild(linkEdit);
     divControls.appendChild(divEdit);
@@ -156,7 +156,7 @@ const showNote = (item) => {
     linkDel.setAttribute("id", item.id);
     iconDel = document.createElement('i');
     iconDel.className = "bi bi-trash";
-    iconDel.style.color = "red";
+    iconDel.style.color = "purple";
     linkDel.appendChild(iconDel);
     divDel.appendChild(linkDel);
     divControls.appendChild(divDel);
@@ -196,12 +196,20 @@ const editNote = (id) => {
     const noteToEdit = notes.find(note => note.id === id);
 
     if (noteToEdit) {
+        // Preencher os campos de entrada com os dados da nota
         document.querySelector("#input-id").value = noteToEdit.id;
         document.querySelector("#input-title").value = noteToEdit.title;
+
+        // Limpar o conteúdo anterior
+        document.querySelector("#input-content").value = '';
+
+        // Mostrar apenas a última edição do conteúdo
         document.querySelector("#input-content").value = noteToEdit.content;
     } else {
-        console.log("nota não encontrada");
+        console.log("Nota não encontrada");
     }
 };
+
+
 
 listNotes();
